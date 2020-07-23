@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/laetitia85/GroupGenerator/issues"
   },
-  "homepage": "https://github.com/laetitia85/GroupGenerator#readme"
+  "homepage": "https://github.com/laetitia85/GroupGenerator#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  }
 }
