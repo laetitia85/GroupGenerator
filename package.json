@@ -1,0 +1,19 @@
+{
+  "name": "groupgenerator",
+  "version": "1.0.0",
+  "description": "node express db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laetitia85/GroupGenerator.git"
+  },
+  "author": "Laetitia et Hugo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laetitia85/GroupGenerator/issues"
+  },
+  "homepage": "https://github.com/laetitia85/GroupGenerator#readme"
+}
