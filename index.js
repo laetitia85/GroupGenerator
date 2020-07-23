@@ -23,3 +23,4 @@ MongoClient.connect(url, function(err, client) {
         client.close();
 });
 });
+console.log("test");
