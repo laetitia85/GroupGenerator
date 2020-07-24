@@ -11,14 +11,7 @@ const dbName = 'dbgenerator';
 
 
 
-
-
-
-
-
-
-
-MongoClient.connect(url, function(err, client) {
+MongoClient.connect(url, function (err, client) {
     if (err) throw err;
 
     db = client.db(dbName);
@@ -26,31 +19,26 @@ MongoClient.connect(url, function(err, client) {
     var myobj = JSON.stringify(studentTab);
 
 
-app.get('/students', (req, res) => {
-    res.set('Content-Type', 'text/html');
-    res.send();
-});
+    app.get('/students', async function(req, res){
+        let test = await dbtest.collection("students").find().toArray()
+        console.log(test)
+        res.json(test);
+    });
 
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
+    app.use(express.urlencoded({ extended: true }));
 
-app.post('/students', function (req, res) {
-    let student = req.body;
-    console.log(student);
-    studentTab.push(student);
-    console.log(studentTab);
-    res.send("student added");
-    dbtest.collection("students").insertOne(student, function (err, res) {
-        if (err) throw err;
-        console.log("1 document inserted");
-        client.close();
+    app.post('/students', function (req, res) {
+        let student = req.body;
+        studentTab.push(student);
+        res.send("student added");
+        dbtest.collection("students").insertOne(student, function (err, res) {
+            if (err) throw err;
+            console.log("1 document inserted");
+            client.close();
+        });
     });
 });
-});
-
-
-
-
 
 app.listen(port, () => {
     console.log('Server app listening on port' + port)
