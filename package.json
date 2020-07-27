@@ -4,6 +4,7 @@
   "description": "node express db",
   "main": "index.js",
   "scripts": {
+    "start": "SERVER_PORT=8080 backpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "mongodb": "^3.5.9"
+    "mongodb": "^3.5.9",
+    "node-fetch": "^2.6.0"
   }
 }
