@@ -35,7 +35,7 @@ MongoClient.connect(url, function (err, client) {
         dbtest.collection("students").insertOne(student, function (err, res) {
             if (err) throw err;
             console.log("1 document inserted");
-            client.close();
+            res.send("ok");
         });
     });
 });
