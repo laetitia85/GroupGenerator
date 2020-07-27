@@ -19,7 +19,7 @@ MongoClient.connect(url, function (err, client) {
     var myobj = JSON.stringify(studentTab);
 
 
-    app.get('/students', async function(req, res){
+    app.get('/students', async function (req, res) {
         let test = await dbtest.collection("students").find().toArray()
         console.log(test)
         res.json(test);
@@ -30,12 +30,20 @@ MongoClient.connect(url, function (err, client) {
 
     app.post('/students', function (req, res) {
         let student = req.body;
-        studentTab.push(student);
-        res.send("student added");
-        dbtest.collection("students").insertOne(student, function (err, res) {
+        // studentTab.push(student);
+        // res.send("student added");
+        dbtest.collection("students").insertOne(student, function (err, result) {
             if (err) throw err;
             console.log("1 document inserted");
             res.send("ok");
+        });
+    });
+
+    app.delete('/students/:name', function (req, res) {
+        dbtest.collection("students").deleteOne({ name: req.params.name }, function (err, result) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            res.send("OK");
         });
     });
 });
