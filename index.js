@@ -14,10 +14,9 @@ MongoClient.connect(url, function (err, client) {
     db.createCollection("students", function (err, res) {
         if (err) throw err;
         console.log("collection created !");
-        client.close();
     });
 
-    db.createCollection("group", function (err, res) {
+    db.createCollection("groups", function (err, res) {
         if (err) throw err;
         console.log("collection created !");
         client.close();
