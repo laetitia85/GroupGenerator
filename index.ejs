@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,11 @@
 </head>
 <header>
     <h2 class="title-GG">Groupe Generator</h2>
+    <ul>
+        <% studentsAAA.forEach(function(student) { %> 
+            <li><%= student.name %></li>
+          <% }); %>
+      </ul>
     <nav>
         <ul class="nav">
             <li><a href="#">Students</a></li>
@@ -15,6 +21,16 @@
         </ul>
     </nav>
 </header>
-<body>
+
+<body>  
+    <h3>List of studants</h3>
+    <div class="addName">
+        <form action="/" method="post" id="student">
+            <label for="insertname" class="label">Insert Name:</label>
+            <input type="search" name="insertname" id="insertname">
+            <input type="submit" value="Add">
+        </form>
+    </div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 body{
     background-color: rgb(44, 44, 44);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 h2{
@@ -34,4 +35,13 @@ a:hover, a:active{
 
 .nav{
     grid-column: 4/4;
+}
+
+
+label{
+    color: white;
+}
+
+.addName{
+    grid-column: 2/4;
 }
