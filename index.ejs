@@ -14,21 +14,15 @@
             <li><%= student.name %></li>
           <% }); %>
       </ul>
-    <nav>
-        <ul class="nav">
-            <li><a href="#">Students</a></li>
-            <li><a href="#">Groups</a></li>
-        </ul>
-    </nav>
 </header>
 
 <body>  
     <h3>List of studants</h3>
     <div class="addName">
-        <form action="/" method="post" id="student">
+        <form action="/students" method="POST">
             <label for="insertname" class="label">Insert Name:</label>
-            <input type="search" name="insertname" id="insertname">
-            <input type="submit" value="Add">
+            <input type="text" placeholder="name" name="name">
+            <button type="submit">Add</button>
         </form>
     </div>
 </body>

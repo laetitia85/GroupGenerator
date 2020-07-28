@@ -24,6 +24,7 @@ MongoClient.connect(url, function (err, client) {
         console.log(test)
         res.json(test);
     });
+
     app.use(bodyParser.json());
     app.use(express.urlencoded({ extended: true }));
 
@@ -34,7 +35,9 @@ MongoClient.connect(url, function (err, client) {
         dbtest.collection("students").insertOne(student, function (err, result) {
             if (err) throw err;
             console.log("1 document inserted");
-            res.send("ok");
+            res.json({
+                msg : "Ok"
+            });
         });
     });
     app.delete('/students/:name', function (req, res) {
@@ -66,7 +69,9 @@ MongoClient.connect(url, function (err, client) {
         dbtest.collection("groups").insertOne(group, function (err, result) {
             if (err) throw err;
             console.log("1 group inserted");
-            res.send("Ok");
+            res.json({
+                msg : "Ok"
+            });
         })
     })
 
@@ -82,3 +87,17 @@ MongoClient.connect(url, function (err, client) {
 app.listen(port, () => {
     console.log('Server app listening on port' + port)
 });
+
+/*--------------------------------
+/**
+ * @summary fonction test pour apprendre un commentaire de fonction
+ * @returns x + y
+ * @param {*} x 
+ * @param {*} y 
+ */
+let add = (x, y) =>{
+return x + y
+}
+
+
+
