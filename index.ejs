@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+    <header>
+        <h2>Group Generator</h2>
+        <p>Students</p>
+        <p>Groups</p>
+    </header>
+
+   
+    <body>
+
+    <div class=container>
+        <section>
+          
+            <ul>
+
+            <% user.forEach(function(student) { %>
+                <li>
+                    <%= student.name %>
+                </li>
+            <% }); %>
+            </ul>
+
+          
+         
+
+                <h1>List of students</h1>
+      
+                <form action="/students" method="POST">
+                <input type="text" name= "name">
+                <button type="submit">Add</button>
+                </form>
+
+        </section>
+    </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+</html>
