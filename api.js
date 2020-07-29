@@ -30,14 +30,14 @@ MongoClient.connect(url, function (err, client) {
 
     app.post('/students', function (req, res) {
         let student = req.body;
-        console.log(student)
         studentTab.push(student);
+        console.log(studentTab);
         dbtest.collection("students").insertOne(student, function (err, result) {
             if (err) throw err;
             console.log("1 document inserted");
             res.json({
               msg:"Ok"
-            });
+        });
         });
       });
 
@@ -54,6 +54,7 @@ MongoClient.connect(url, function (err, client) {
       let test = await dbtest.collection("groups").find().toArray()
       console.log(test)
       res.json(test);
+
   });
 
   app.get('/groups/:name' , function (req, res) {
@@ -65,7 +66,14 @@ MongoClient.connect(url, function (err, client) {
   });
 
   app.post('/groups', function (req, res) {
-    let student = req.body;
+  
+
+    let student = {
+      name: req.body.name,  
+      number : req.body.number,
+      list : req.body.list
+    }
+
     studentTab.push(student);
     res.send("student added");
     dbtest.collection("groups").insertOne(student, function (err, result) {

@@ -22,6 +22,8 @@
     <div class=container>
         <section>
           
+            <h1>List of students</h1>
+
             <ul>
 
             <% user.forEach(function(student) { %>
@@ -31,17 +33,13 @@
             <% }); %>
             </ul>
 
-          
-         
-
-                <h1>List of students</h1>
-      
-                <form action="/students" method="POST">
-                <input type="text" name= "name">
+            <form action="/students" method="POST">
+                <input type="text" name= "name" placeholder="Name">
                 <button type="submit">Add</button>
                 </form>
-
+        
         </section>
+
     </div>
         
 
