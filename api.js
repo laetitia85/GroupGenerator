@@ -11,17 +11,17 @@ const dbName = 'dbgenerator';
 
 
 
-MongoClient.connect(url, function (err, client) {
+MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
     if (err) throw err;
 
     db = client.db(dbName);
     var dbtest = client.db("dbgenerator");
-    var myobj = JSON.stringify(studentTab);
+
+   
 
     //Student
     app.get('/students', async function (req, res) {
         let test = await dbtest.collection("students").find().toArray()
-        console.log(test)
         res.json(test);
     });
 
@@ -30,8 +30,8 @@ MongoClient.connect(url, function (err, client) {
 
     app.post('/students', function (req, res) {
         let student = req.body;
-        // studentTab.push(student);
-        // res.send("student added");
+        studentTab.push(student);
+        console.log(studentTab);
         dbtest.collection("students").insertOne(student, function (err, result) {
             if (err) throw err;
             console.log("1 document inserted");
@@ -51,6 +51,7 @@ MongoClient.connect(url, function (err, client) {
     //Group
 
     app.get('/groups', async function (req, res) {
+        console.log("GET /groups")
         let test = await dbtest.collection("groups").find().toArray();
         console.log(test);
         res.json(test);
@@ -59,13 +60,13 @@ MongoClient.connect(url, function (err, client) {
     app.get('/groups/:name', async function (req, res) {
         let test = await dbtest.collection("groups").insertOne({ name: req.params.name }, function (err, result) {
             if (err) throw err;
-            console.log(test);
             res.json(test);
         });
     });
 
     app.post('/groups', async function (req, res) {
         let group = req.body;
+        console.log(group);
         dbtest.collection("groups").insertOne(group, function (err, result) {
             if (err) throw err;
             console.log("1 group inserted");

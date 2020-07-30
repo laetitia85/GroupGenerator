@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Groups</title>
+</head>
+<header>
+    <h2 class="title-GG">Groupe Generator</h2>
+</header>
+
+<body>
+    <h3>List of groups</h3>
+    <ul>
+        <% groupsAAA.forEach(function(groups) { %>
+        <li><h4><%= groups.name %></li></h4>
+        <% groups.students.forEach(function(student){ %>
+                <li><%= student.name %></li>
+        <% }); %>
+        <% }); %>
+    </ul>
+
+    <div class="addName">
+        <form action="/groups" method="POST">
+            <label for="insertname" class="label">Insert Name:</label>
+            <input type="text" placeholder="Project Name" name="project">
+            <input type="text" placeholder="Group Members" name='nbr'>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+
+</html>

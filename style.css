@@ -14,7 +14,11 @@ header{
     background-color: rgb(39, 38, 38);
 }
 
-ul>li{
+ul{
+    list-style: none;
+}
+
+li{
     text-decoration: none;
     display: inline;
 }

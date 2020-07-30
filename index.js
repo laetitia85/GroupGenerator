@@ -11,11 +11,11 @@ MongoClient.connect(url, function (err, client) {
 
     db = client.db(dbName);
 
-    db.createCollection("students", function (err, res) {
-        if (err) throw err;
-        console.log("collection created !");
-        client.close();
-    });
+    // db.createCollection("students", function (err, res) {
+    //     if (err) throw err;
+    //     console.log("collection created !");
+    //     client.close();
+    // });
 
     db.createCollection("group", function (err, res) {
         if (err) throw err;
