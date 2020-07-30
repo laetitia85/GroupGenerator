@@ -4,24 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="public/asset/style.css">
     <title>Groups</title>
 </head>
-<header>
-    <h2 class="title-GG">Groupe Generator</h2>
-</header>
 
 <body>
-    <h3>List of groups</h3>
-    <ul>
-        <% groupsAAA.forEach(function(groups) { %>
-        <li><h4><%= groups.name %></li></h4>
-        <% groups.students.forEach(function(student){ %>
-                <li><%= student.name %></li>
-        <% }); %>
-        <% }); %>
-    </ul>
-
+    <header>
+        <div class="container">
+            <h1 class="title-GG">Groupe Generator</h1>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="http://localhost:8080/students">Students</a></li>
+                <li><a href="http://localhost:8080/groups">Groups</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="title">
+        <h2>List of groups</h2>
+    </section>
+    <section class="list">
+        <ul>
+            <% groupsAAA.forEach(function(groups) { %>
+            <li class="groupsName">
+                <h4><%= groups.name %></h4>
+            </li>
+            <% groups.students.forEach(function(student){ %>
+            <li><%= student.name %></li>
+            <% }); %>
+            <% }); %>
+        </ul>
+    </section>
     <div class="addName">
         <form action="/groups" method="POST">
             <label for="insertname" class="label">Insert Name:</label>
@@ -30,6 +43,7 @@
             <button type="submit">Generate</button>
         </form>
     </div>
+    <footer></footer>
 </body>
 
 </html>

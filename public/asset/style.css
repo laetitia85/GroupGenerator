@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(44, 44, 44);
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "list"
+    "addName";
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,li{
+    color: honeydew;
+}
+
+
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: rgb(39, 38, 38);
+    grid-area: header;
+}
+
+.container{
+    display:inline;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+
+.navigation>ul>li{
+    display: inline;
+    margin:5vh;
+    padding-top: 5vh;
+}
+
+
+ul{
+    list-style: none;
+}
+
+li{
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color :grey;
+}
+
+a:hover, a:active{
+ color: white;
+ border-bottom: white 3px solid;
+}
+
+
+label{
+    color: white;
+}
+
+
+.title{
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+}
+
+.list{
+    grid-area: list;
+    display: flex;
+    justify-content: center;
+}
+
+.list>ul>li{
+    background-color: white;
+    color: gray;
+    padding: 0.2vh 10vw 0.2vh 10vw;
+    border-bottom: 0.5px solid rgba(128, 128, 128, 0.384) ;
+}
+
+.addName{
+    display: flex;
+    justify-content: center;
+    grid-area: addName;
+}
+
+
+
+footer{
+    margin-bottom: 10vh;
+}

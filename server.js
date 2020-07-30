@@ -9,7 +9,7 @@ const qs = require('querystring');
 
 
 
-
+app.use('/public', express.static('public'));
 
 
 //CREATION D'UNE ROUTE 
