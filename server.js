@@ -74,6 +74,7 @@ app.get('/groups', async function (req,res) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
+
 app.post('/groups', async function (req,res) {
     // console.log(req.body.name);
         let recStudent = await pdt();
