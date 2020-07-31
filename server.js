@@ -5,7 +5,6 @@ let fs = require('fs');
 let ejs = require('ejs');
 const bodyParser = require('body-parser');
 const qs = require('querystring');
-// let li = document.getElementsByClassName('liStudent');
 
 
 async function pdt() {
